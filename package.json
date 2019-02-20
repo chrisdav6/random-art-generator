@@ -1,0 +1,15 @@
+{
+  "name": "randomartgenerator",
+  "version": "1.0.0",
+  "description": "Random Art Generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chris Davis",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-sass": "^4.0.2"
+  }
+}

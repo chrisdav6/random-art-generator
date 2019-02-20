@@ -1,0 +1,47 @@
+body {
+  font-family: Roboto, sans-serif;
+  min-height: 100vh;
+}
+
+header {
+  background: #2374ab;
+  color: #fff;
+  padding: 2em 0;
+
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 0;
+  }
+
+  p {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+}
+
+footer {
+  padding: 1em 0;
+  margin-top: auto;
+  background: #4dccbd;
+  color: #272932;
+  font-weight: 300;
+  font-size: 1.25rem;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  i {
+    font-size: 1.5rem;
+  }
+
+  a {
+    padding: .15em;
+    color: #272932;
+    transition: color .5s;
+
+    &:hover {
+      color: lighten(#272932, 10%);
+    }
+  }
+}

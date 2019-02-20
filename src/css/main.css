@@ -1,0 +1,32 @@
+body {
+  font-family: Roboto, sans-serif;
+  min-height: 100vh; }
+
+header {
+  background: #2374ab;
+  color: #fff;
+  padding: 2em 0; }
+  header h1 {
+    font-size: 4rem;
+    margin-bottom: 0; }
+  header p {
+    font-size: 1.5rem;
+    font-weight: 300; }
+
+footer {
+  padding: 1em 0;
+  margin-top: auto;
+  background: #4dccbd;
+  color: #272932;
+  font-weight: 300;
+  font-size: 1.25rem; }
+  footer p {
+    margin-bottom: 0; }
+  footer i {
+    font-size: 1.5rem; }
+  footer a {
+    padding: .15em;
+    color: #272932;
+    transition: color .5s; }
+    footer a:hover {
+      color: #3d404f; }
