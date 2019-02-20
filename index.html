@@ -7,8 +7,6 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!-- Custom CSS -->
@@ -24,6 +22,41 @@
       </div>
     </header>
 
+    <section id="iconSelect" class="py-3 bg-light">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-4 p-2">
+            <h5 class="mb-0 text-center text-md-left">Select an icon, then click generate art!</h5>
+          </div>
+          <div class="col-md-4 p-2 text-center">
+            <a href="#" role="button" class="option1 p-1 icon"><i class="fab fa-angellist"></i></a>
+            <a href="#" role="button" class="option2 p-1 icon"><i class="fas fa-adjust"></i></a>
+            <a href="#" role="button" class="option3 p-1 icon"><i class="fas fa-angle-double-up"></i></a>
+            <a href="#" role="button" class="option4 p-1 icon"><i class="far fa-angry"></i></a>
+            <a href="#" role="button" class="option5 p-1 icon"><i class="fas fa-arrows-alt-h"></i></a>
+            <a href="#" role="button" class="option6 p-1 icon"><i class="fab fa-bitbucket"></i></a>
+            <a href="#" role="button" class="option7 p-1 icon"><i class="fas fa-child"></i></a>
+          </div>
+          <div class="col-md-4 p-2">
+            <button class="btn art-btn btn-block">Genrate Art</button>
+          </div>
+        </div>  
+      </div>
+    </section>
+
+    <section id="canvas">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mx-auto">
+            <div class="artboard">
+              
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
     <footer>
       <div class="container d-flex flex-column align-items-center flex-md-row justify-content-md-between">
         <p>Created by Chris Davis</p>
@@ -37,5 +70,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
+    <script src="/src/js/main.js"></script>
   </body>
 </html>

@@ -13,6 +13,35 @@ header {
     font-size: 1.5rem;
     font-weight: 300; }
 
+.art-btn {
+  background: #272932;
+  color: #fff; }
+  .art-btn:hover {
+    color: #fff;
+    background: #54586b; }
+
+.icon {
+  font-size: 1.35rem;
+  color: #272932; }
+  .icon:hover {
+    color: #272932; }
+
+#canvas {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  flex: 1;
+  justify-content: center; }
+
+.artboard {
+  width: 100%;
+  height: 450px;
+  margin: auto 0;
+  border: 1px solid #272932;
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  padding: .5em; }
+
 footer {
   padding: 1em 0;
   margin-top: auto;
