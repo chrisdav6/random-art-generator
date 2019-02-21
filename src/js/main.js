@@ -96,10 +96,21 @@ $(function () {
     html2canvas(document.querySelector("#capture")).then(canvas => {
       let modalBody = document.createElement("div");
       modalBody.className = "modal-body";
-      console.log(modalBody);
       modalBody.appendChild(canvas);
       document.querySelector(".modal-content").appendChild(modalBody);
     });
+
+    //Share to facebook - Work in progress
+    // setTimeout(() => {
+    //   var canvas = document.querySelector('canvas');
+    //   var dataURL = canvas.toDataURL("image/png");
+    //   console.log(dataURL);
+
+    //   fetch(dataURL)
+    //     .then(res => res.blob())
+    //     .then(blob => console.log(blob));
+    // }, 2000);
+    
   });
 
   //Remove modal body on close so duplicate art is not placed in canvas
