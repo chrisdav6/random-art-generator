@@ -45,6 +45,22 @@ $(function () {
   });
 
   
+  $(".captureBtn").on("click", function() {
+    $('#canvasModal').modal('show');
 
+    html2canvas(document.querySelector("#capture")).then(canvas => {
+      let modalBody = document.createElement("div");
+      modalBody.className = "modal-body";
+      console.log(modalBody);
+      modalBody.appendChild(canvas);
+      document.querySelector(".modal-content").appendChild(modalBody);
+    });
+  });
+
+  //Remove modal body on close so duplicate art is not placed in canvas
+  $('#canvasModal').on('hidden.bs.modal', function () {
+    $(".modal-body").remove();
+  })
 
 });
+

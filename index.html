@@ -44,18 +44,17 @@
       </div>
     </section>
 
-    <section id="canvas">
+    <section class="canvas">
       <div class="container">
         <div class="row">
           <div class="col-lg-10 mx-auto">
-            <div class="artboard">
-              
-            </div>
+            <div class="artboard" id="capture"></div>
           </div>
         </div>
-        
       </div>
     </section>
+
+    <button class="btn btn-dark captureBtn">Capure Art</button>
 
     <footer>
       <div class="container d-flex flex-column align-items-center flex-md-row justify-content-md-between">
@@ -66,10 +65,26 @@
         </p>
       </div>
     </footer>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="canvasModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content" style="width:980px;">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Right click art to save!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <!-- modal body section injected by javascript -->
+        </div>
+      </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="/src/js/main.js"></script>
+    <script src="src/js/html2canvas.min.js"></script>
+    <script src="src/js/main.js"></script>
   </body>
 </html>
