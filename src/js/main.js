@@ -94,13 +94,12 @@ $(function () {
     $('#canvasModal').modal('show');
 
     html2canvas(document.querySelector("#capture")).then(canvas => {
-      let modalBody = document.createElement("div");
-      modalBody.className = "modal-body";
-      modalBody.appendChild(canvas);
-      document.querySelector(".modal-content").appendChild(modalBody);
+      let modalBody = $(".modal-body");
+      modalBody.html("");
+      document.querySelector(".modal-body").appendChild(canvas);
     });
 
-    //Share to facebook - Work in progress
+    // Share to facebook - Work in progress
     // setTimeout(() => {
     //   var canvas = document.querySelector('canvas');
     //   var dataURL = canvas.toDataURL("image/png");
@@ -109,14 +108,34 @@ $(function () {
     //   fetch(dataURL)
     //     .then(res => res.blob())
     //     .then(blob => console.log(blob));
+
+    //   const upload = async (response) => {
+    //     let canvas = document.getElementById('canvas');
+    //     let dataURL = canvas.toDataURL('image/jpeg', 1.0);
+    //     let blob = dataURItoBlob(dataURL);
+    //     let formData = new FormData();
+    //     formData.append('access_token', response.authResponse.accessToken);
+    //     formData.append('source', blob);
+
+    //     let responseFB = await fetch(`https://graph.facebook.com/me/photos`, {
+    //       body: formData,
+    //       method: 'post'
+    //     });
+    //     responseFB = await responseFB.json();
+    //     console.log(responseFB);
+    //   };
+
+    //   document.querySelector('.upload').addEventListener('click', () => {
+    //     FB.login((response) => {
+    //       //TODO check if user is logged in and authorized publish_actions
+    //       upload(response);
+    //     }, { scope: 'publish_actions' })
+    //   });
+
     // }, 2000);
     
   });
 
-  //Remove modal body on close so duplicate art is not placed in canvas
-  $('#canvasModal').on('hidden.bs.modal', function () {
-    $(".modal-body").remove();
-  })
-
+  
 });
 
