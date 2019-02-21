@@ -5,20 +5,19 @@ body {
 header {
   background: #2374ab;
   color: #fff;
-  padding: 2em 0; }
+  padding: 3em 0 2.5em 0; }
   header h1 {
     font-size: 4rem;
-    margin-bottom: 0; }
+    border: 1px solid #fff;
+    display: inline-block;
+    padding: .15em .35em; }
   header p {
     font-size: 1.5rem;
-    font-weight: 300; }
+    font-weight: 300;
+    margin-bottom: 0; }
 
-.art-btn {
-  background: #272932;
-  color: #fff; }
-  .art-btn:hover {
-    color: #fff;
-    background: #54586b; }
+#iconSelect {
+  background: #ececec; }
 
 .icon {
   font-size: 1.35rem;
