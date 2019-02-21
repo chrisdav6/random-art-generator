@@ -2,11 +2,13 @@ $(function () {
 
   $artboard = $(".artboard");
 
+  //genrate random angle to be applied to icon div
   function generateAngle() {
     $angle =  Math.floor(Math.random() * 360) + 1;
     return $angle;
   }
 
+  //empty artboard then load new art content
   function loadArtboard(icon) {
     $artboard.empty();
 
@@ -15,8 +17,10 @@ $(function () {
     };
   }
 
+  //Load artwork on page load
   loadArtboard("fab fa-angellist fa-2x");
 
+  //Handle icon button clicks
   $(".icon").on("click", function() {
     if ($(this).hasClass('option1')) {
       loadArtboard("fab fa-angellist fa-2x");
@@ -44,7 +48,7 @@ $(function () {
     }
   });
 
-  
+  //Capture artwork and display in modal
   $(".captureBtn").on("click", function() {
     $('#canvasModal').modal('show');
 
