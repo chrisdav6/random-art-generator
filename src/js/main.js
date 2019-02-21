@@ -4,26 +4,49 @@ $(function () {
 
   //genrate random angle to be applied to icon div
   function generateAngle() {
-    $angle =  Math.floor(Math.random() * 360) + 1;
+    let $angle =  Math.floor(Math.random() * 360) + 1;
     return $angle;
   }
 
+  //generate random icon size
+  function generateSize() {
+    let $rand = Math.floor(Math.random() * 4) + 1;
+    return $rand;
+  }
+
+  //Handle random btn
+  $(".randomBtn").on("click", function() {
+    $(this).toggleClass("random");
+
+    if($(this).hasClass("random")) {
+      $(this).text("Random Size");
+    } else {
+      $(this).text("Same Size");
+    }
+  });
+  
   //empty artboard then load new art content
-  function loadArtboard(icon, iconClass) {
+  function loadArtboard(icon) {
     $artboard.empty();
 
-    for (var i = 0; i < 300; i++) {
-      $artboard.append(`<div class="box" style="display: flex; justify-content: center; align-items: center; transform: rotate(${generateAngle()}deg);"><i class='${icon}'}"></i></div>`);
-    };
+    if($(".randomBtn").hasClass("random")) {
+      for (var i = 0; i < 300; i++) {
+        $artboard.append(`<div class="box" style="display: flex; justify-content: center; align-items: center; transform: rotate(${generateAngle()}deg);"><i class='${icon} fa-${generateSize()}x'}"></i></div>`);
+      };
+    } else {
+      for (var i = 0; i < 300; i++) {
+        $artboard.append(`<div class="box" style="display: flex; justify-content: center; align-items: center; transform: rotate(${generateAngle()}deg);"><i class='${icon} fa-2x'}"></i></div>`);
+      };
+    }
+    
   }
 
   //Load artwork on page load
-  loadArtboard("fab fa-angellist fa-2x");
+  loadArtboard("fab fa-angellist");
 
   //Handle icon button clicks
   $(".icon").on("click", function() {
     let iconName = $(this).find("i").attr("class"); //find icon name from html link
-    iconName += " fa-2x"; //add 2x class to icon name
     loadArtboard(iconName);
   });
   
