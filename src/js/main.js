@@ -9,7 +9,7 @@ $(function () {
   }
 
   //empty artboard then load new art content
-  function loadArtboard(icon) {
+  function loadArtboard(icon, iconClass) {
     $artboard.empty();
 
     for (var i = 0; i < 300; i++) {
@@ -22,32 +22,11 @@ $(function () {
 
   //Handle icon button clicks
   $(".icon").on("click", function() {
-    if ($(this).hasClass('option1')) {
-      loadArtboard("fab fa-angellist fa-2x");
-    }
-    if($(this).hasClass('option2')) {
-      loadArtboard("fas fa-adjust fa-2x");
-    }
-    if ($(this).hasClass('option3')) {
-      loadArtboard("fas fa-angle-double-up fa-2x");
-    }
-    if ($(this).hasClass('option4')) {
-      loadArtboard("far fa-angry fa-2x");
-    }
-    if ($(this).hasClass('option5')) {
-      loadArtboard("fas fa-arrows-alt-h fa-2x");
-    }
-    if ($(this).hasClass('option6')) {
-      loadArtboard("fab fa-bitbucket fa-2x");
-    }
-    if ($(this).hasClass('option7')) {
-      loadArtboard("fas fa-child fa-2x");
-    }
-    if ($(this).hasClass('option8')) {
-      loadArtboard("fas fa-wrench fa-2x");
-    }
+    let iconName = $(this).find("i").attr("class"); //find icon name from html link
+    iconName += " fa-2x"; //add 2x class to icon name
+    loadArtboard(iconName);
   });
-
+  
   //Capture artwork and display in modal
   $(".captureBtn").on("click", function() {
     $('#canvasModal').modal('show');
