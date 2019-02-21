@@ -8,6 +8,26 @@ $(function () {
     return $angle;
   }
 
+  //generate a random icon color
+  function generateColor() {
+    let r = Math.floor(Math.random() * 255) + 1;
+    let g = Math.floor(Math.random() * 255) + 1;
+    let b = Math.floor(Math.random() * 255) + 1;
+    let $color = `rgba(${r}, ${g}, ${b}, 1);`
+    return $color;
+  };
+
+  //Handle color btn
+  $(".colorBtn").on("click", function () {
+    $(this).toggleClass("color");
+
+    if ($(this).hasClass("color")) {
+      $(this).text("Random Colors");
+    } else {
+      $(this).text("Same Color");
+    }
+  });
+
   //generate random icon size
   function generateSize() {
     let $rand = Math.floor(Math.random() * 4) + 1;
@@ -29,15 +49,34 @@ $(function () {
   function loadArtboard(icon) {
     $artboard.empty();
 
-    if($(".randomBtn").hasClass("random")) {
+    //Standard color and size
+    for (var i = 0; i < 300; i++) {
+      $artboard.append(`<div class="box" style="display: flex; justify-content: center; align-items: center; transform: rotate(${generateAngle()}deg); color: #25292D;"><i class='${icon} fa-2x'></i></div>`);
+    };
+
+    //Random size standard color
+    if ($(".randomBtn").hasClass("random")) {
+      $artboard.empty();
       for (var i = 0; i < 300; i++) {
-        $artboard.append(`<div class="box" style="display: flex; justify-content: center; align-items: center; transform: rotate(${generateAngle()}deg);"><i class='${icon} fa-${generateSize()}x'}"></i></div>`);
+        $artboard.append(`<div class="box" style="display: flex; justify-content: center; align-items: center; transform: rotate(${generateAngle()}deg); color: #25292D;"><i class='${icon} fa-${generateSize()}x'></i></div>`);
       };
-    } else {
+    } 
+
+    //Standard size random color
+    if ($(".colorBtn").hasClass("color")) {
+      $artboard.empty();
       for (var i = 0; i < 300; i++) {
-        $artboard.append(`<div class="box" style="display: flex; justify-content: center; align-items: center; transform: rotate(${generateAngle()}deg);"><i class='${icon} fa-2x'}"></i></div>`);
+        $artboard.append(`<div class="box" style="display: flex; justify-content: center; align-items: center; transform: rotate(${generateAngle()}deg); color: ${generateColor()};"><i class='${icon} fa-2x'></i></div>`);
       };
-    }
+    } 
+
+    //Random size and color
+    if ($(".randomBtn").hasClass("random") && $(".colorBtn").hasClass("color")) {
+      $artboard.empty();
+      for (var i = 0; i < 300; i++) {
+        $artboard.append(`<div class="box" style="display: flex; justify-content: center; align-items: center; transform: rotate(${generateAngle()}deg); color: ${generateColor()};"><i class='${icon} fa-${generateSize()}x'></i></div>`);
+      };
+    } 
     
   }
 
